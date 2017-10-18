@@ -20,6 +20,11 @@
         </script>
 
     <style>
+    
+        body {
+            margin-top:50px;
+        }
+        
         .thumbnail {
             width: 100px;
         }
@@ -27,15 +32,17 @@
 
     </head>
     <body>
-
-        <nav class="navbar navbar-toggleable-sm navbar-light bg-inverse">
-          <a class="navbar-brand" href="#">Entertainment Center</a>
+        
+        <nav class="navbar navbar-toggleable-sm navbar-default navbar-fixed-top bg-inverse">
+          <a class="navbar-brand" href="./entertainment.html">Media Tracker</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#fixedNav">
       </button>
           <div class="collapse navbar-collapse" id="fixedNav">
             <ul class="nav navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Media Queue<span class="sr-only">(current)</span></a>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="./entertainment.html">Media Queue<span class="sr-only">(current)</span></a>
+
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +60,9 @@
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" action="../php/sample.php">
               <input class="form-control mr-sm-2" type="text" placeholder="Search by Author" name="search">
-              <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" onClick="Javascript:window.location.href = '../php/sample.php';"></input>
+
+              <input class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick="Javascript:window.location.href = '../php/sample.php';" value="Search">
+
             </form>
           </div>
         </nav>
