@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sign Up Page</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -9,26 +11,45 @@
            body {
                padding-left: 5%;
            }
-           #txtUsername, #txtPassword, #txtConfirm, #txtEmail {
+           #txtEmail, #txtUsername, #txtPassword, #txtConfirm {
                width: 40%;
                min-width: 300px;
            }
        </style>
-
+        
+        <script>
+            function validate(f){
+                var password = f.txtPassword.value;
+                
+                if(password.length < 6){
+                    alert("Password must be atleast 6 characters long.");
+                    return false;
+                    
+                }
+                
+                if(f.txtConfirm.value !== password){
+                    alert("Passwords must match.")
+                    return false;
+                }
+                return true;
+            }
+        </script>
 
     </head>
 
     <body>
-        <fieldset>
-            <legend> Sign Up </legend>
-            <div>
-                <b>E-mail: </b> <input type="text" class="form-control" id="txtEmail">
-                <b>Username: </b> <input type="text" class="form-control" id="txtUsername">
-                <b>Password: </b> <input type="text" class="form-control" id="txtPassword">
-                <b>Confirm Password: </b> <input type="text" class="form-control" id="txtConfirm">
-            </div>
-        </fieldset>
-        <br>
-        <button type="button" class="btn btn-default">Sign Up</button>
+        <form action="./entertainment.html" id="login" method="post" onsubmit="return validate(this);">
+            <fieldset>
+                <legend> Sign Up </legend>
+                <div>
+                    <b>E-mail: </b> <input type="email" class="form-control" id="txtEmail" required>
+                    <b>Username: </b> <input type="text" class="form-control" id="txtUsername" required>
+                    <b>Password: </b> <input type="password" class="form-control" id="txtPassword">
+                    <b>Confirm Password: </b> <input type="password" class="form-control" id="txtConfirm">
+                </div>
+            </fieldset>
+            <br>
+            <input type="submit" class="btn btn-default" value="Sign Up">
+        </form>
     </body>
 </html>
