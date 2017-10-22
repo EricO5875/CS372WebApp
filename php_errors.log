@@ -1,0 +1,4 @@
+[18-Oct-2017 12:49:52 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'eolsen'@'localhost' (using password: NO) in /home/ubuntu/workspace/CS372Project/php/sample.php on line 10
+[18-Oct-2017 12:49:52 UTC] PHP Stack trace:
+[18-Oct-2017 12:49:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/sample.php:0
+[18-Oct-2017 12:49:52 UTC] PHP   2. mysqli_connect() /home/ubuntu/workspace/CS372Project/php/sample.php:10
