@@ -85,6 +85,11 @@
         padding-top:5px;
     }
     
+    .bio{
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    
   </style>
   
   </head>
@@ -108,13 +113,22 @@
             <li class="nav-item">
               <a class="nav-link" href="queue.html">My Queue</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Browse</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="aboutUs.html">About Us</a>
-            </li>
-          </ul>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Browse
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="browse.html#movietab">Movies</a>
+              <a class="dropdown-item" href="browse.html#tvtab">Tv Shows</a>
+              <a class="dropdown-item" href="browse.html#booktab">Books</a>
+        </div>
+          </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="aboutUs.html">About Us</a>
+                </li>
+              </ul>
+
           
           <form class="form-inline my-2 my-lg-0" method="post" action="../php/sample.php">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
@@ -155,7 +169,12 @@
               <center><h4 class="card-title">Eric Olsen</h4></center>
                   <img src="../images/ericolsen.jpg" alt="Eric Olsen" class="thumb" >
             </div>
-            <p>Information about Eric. He likes cookies, cats, and carrots.</p>
+            <p class = "bio">Information about Eric. He likes cookies, cats, and 
+            carrots.</br></br>
+              <a href = "https://github.com/EricO5875">
+                <img src = "githubmark.png" alt = "GitHub">
+              </a>
+            </p>
           </div>
         </div>
         <!-- /.col-md-4 -->
@@ -166,7 +185,12 @@
               <center><h4 class="card-title">Sam Wickey</h4></center>
                   <img src="../images/samwickey.jpg" alt="Sam Wickey" class="thumb" >
             </div>
-            <p>Information about Sam. He likes cookies, cats, and carrots.</p>
+            <p class = "bio">Information about Eric. He likes cookies, cats, and 
+            carrots.</br></br>
+              <a href = "https://github.com/EricO5875">
+                <img src = "githubmark.png" alt = "GitHub">
+              </a>
+            </p>
           </div>
         </div>
         <!-- /.col-md-4 -->
@@ -177,7 +201,12 @@
               <center><h4 class="card-title">Ashley Xu</h4></center>
                   <img src="../images/ashleyXu.jpg" alt="Ashley Xu" class="thumb" >
             </div>
-            <p>Information about Ashley. She likes cookies, cats, and carrots.</p>
+            <p class = "bio">Computer Science student. Software Quality 
+            Assurance Engineer. Cat-mom.</br></br>
+              <a href = "https://github.com/NegaAshley">
+                <img src = "githubmark.png" alt = "GitHub">
+              </a>
+            </p>
           </div>
         </div>
         <!-- /.col-md-4 -->
