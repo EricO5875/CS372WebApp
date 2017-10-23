@@ -4,66 +4,71 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Media Queue</title>
+        <title>Browse Tv Shows</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../star-rating-plugin/bootstrap-star-rating/css/star-rating.min.css">
-
-        <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-        </script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-        </script>
-        <script
-            src="../star-rating-plugin/bootstrap-star-rating/js/star-rating.min.js" type="text/javascript">
-        </script>
-
-    <style>
     
-        body {
-            margin-top:50px;
-        }
+        <style>
         
-        .thumbnail {
-            width: 100px;
-        }
-    </style>
+            body {
+                margin-top:50px;
+            }
+            
+            .thumbnail {
+                width: 100px;
+            }
+        </style>
 
     </head>
     <body>
         
-        <nav class="navbar navbar-toggleable-sm navbar-default navbar-fixed-top bg-inverse">
-          <a class="navbar-brand" href="./entertainment.html">Media Tracker</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#fixedNav">
-      </button>
-          <div class="collapse navbar-collapse" id="fixedNav">
-            <ul class="nav navbar-nav">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="home.html">Entertainment Center</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="home.html">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="queue.html">My Queue</a>
+                </li>
+                <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Browse
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="movieBrowser.html">Movies</a>
+              <a class="dropdown-item" href="tvShowBrowser.html">Tv Shows</a>
+              <a class="dropdown-item" href="bookBrowser.html">Books</a>
+            </div>
+          </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="aboutUs.html">About Us</a>
+                </li>
+              </ul>
               
-              <li class="nav-item">
-                <a class="nav-link" href="./entertainment.html">Media Queue<span class="sr-only">(current)</span></a>
-
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Browse
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="movieBrowser.html">Movies</a>
-                  <a class="dropdown-item" href="tvShowBrowser.html">TV Shows</a>
-                  <a class="dropdown-item" href="bookBrowser.html">Books</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./login.html">Log Out</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" method="post" action="../php/sample.php">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
-
-              <input class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick="Javascript:window.location.href = '../php/sample.php';" value="Search">
-
-            </form>
+              <form class="form-inline my-2 my-lg-0" method="post" action="../php/sample.php">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
+                  <input class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick="Javascript:window.location.href = '../php/sample.php';" value="Search">
+              </form>
+              
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Login<span class="glyphicon glyphicon-log-in"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="signup.html">Sign up<span class="glyphicon glyphicon-edit"></span></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
         
@@ -111,6 +116,11 @@
                 
             </table>
         </div>
+
+         <!-- Bootstrap core JavaScript -->
+        <script src="../jquery/jquery.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../star-rating-plugin/bootstrap-star-rating/js/star-rating.min.js" type="text/javascript"></script>
 
     </body>
 </html>
