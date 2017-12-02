@@ -21,7 +21,7 @@
         <script src="../js/bootstrap.bundle.min.js"></script>
 
         <!-- RateYo Jquery star rating plug in -->
-        <script type="text/javascript" src="../bower_components/rateYo/src/jquery.rateyo.js"></script>
+        <script type="text/javascript" src="../rateYoStarRating/rateYo/src/jquery.rateyo.js"></script>
         
         <!-- Custom JavaScript -->
         <script type="text/javascript" src="../js/custom.js"></script>

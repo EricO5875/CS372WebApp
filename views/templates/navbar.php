@@ -36,9 +36,11 @@
                         </li>
                     </ul>
                     
-                    <form class="form-inline my-2 my-lg-0" method="post" action="../php/sample.php">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
-                        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick="Javascript:window.location.href = '../php/sample.php';" value="Search">
+                    <form class="form-inline my-2 my-lg-0" id='searchForm' method='get' action='control.php'>
+                        <input type="text" name="page" style='display:none;' value="search">
+                        <input class="form-control mr-sm-2" id='search' type="text" list="datalist" 
+                            placeholder="Search" name="search" value="<?php if (isset($_GET['search'])) echo htmlspecialchars($_GET['search']); ?>">
+                        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
                     </form>
               
                     <ul class="navbar-nav ml-auto">
@@ -52,3 +54,4 @@
                 </div>
             </div>
         </nav>
+        

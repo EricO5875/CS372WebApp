@@ -24,7 +24,7 @@
         <link href="../css/custom.css" rel="stylesheet">
     
         <!-- CSS for RateYo Jquery star rating plugin -->
-        <link rel="stylesheet" href="../bower_components/rateYo/min/jquery.rateyo.min.css"/>
+        <link rel="stylesheet" href="../rateYoStarRating/rateYo/min/jquery.rateyo.min.css"/>
         
     </head>
     <body>

@@ -15,6 +15,6 @@ A sign up page for entertainmentcenter.com
                 </div>
             </fieldset>
             <br>
-            <input type="submit" class="btn btn-primary" value="Sign Up">
+            <input type="submit" id="signup" class="btn btn-primary" value="Sign Up">
         </form>
     

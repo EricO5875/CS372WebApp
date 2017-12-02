@@ -30,7 +30,7 @@ A controller for entertainmentcenter.com
     		break;
     
     	case 'aboutUs':
-    		render('templates/header', array('title' => 'About Us'));
+    		render('templates/header', array('title' => 'About us'));
     		render('aboutUs');
     		break;
     	
@@ -42,6 +42,11 @@ A controller for entertainmentcenter.com
     	case 'signup':
     		render('templates/header', array('title' => 'Sign up'));
     		render('signup');
+    		break;
+    		
+    	case 'search':
+    		render('templates/header', array('title' => 'Search results'));
+    		render('search', array('search' => $_GET['search']));
     		break;
     		
     }
