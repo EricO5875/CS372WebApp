@@ -61,3 +61,68 @@
 [02-Dec-2017 01:00:29 UTC] PHP Stack trace:
 [02-Dec-2017 01:00:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
 [02-Dec-2017 01:00:29 UTC] PHP   2. render() /home/ubuntu/workspace/CS372Project/html/control.php:49
+[04-Dec-2017 19:34:13 UTC] PHP Parse error:  syntax error, unexpected 'media' (T_STRING), expecting ')' in /home/ubuntu/workspace/CS372Project/html/control.php on line 54
+[04-Dec-2017 19:35:15 UTC] PHP Warning:  mysqli::query(): Empty query in /home/ubuntu/workspace/CS372Project/views/view.php on line 18
+[04-Dec-2017 19:35:15 UTC] PHP Stack trace:
+[04-Dec-2017 19:35:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
+[04-Dec-2017 19:35:15 UTC] PHP   2. render() /home/ubuntu/workspace/CS372Project/html/control.php:54
+[04-Dec-2017 19:35:15 UTC] PHP   3. require() /home/ubuntu/workspace/CS372Project/includes/helpers.php:16
+[04-Dec-2017 19:35:15 UTC] PHP   4. mysqli->query() /home/ubuntu/workspace/CS372Project/views/view.php:18
+[05-Dec-2017 18:26:16 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:26:16 UTC] PHP Stack trace:
+[05-Dec-2017 18:26:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:28:13 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:28:13 UTC] PHP Stack trace:
+[05-Dec-2017 18:28:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:28:14 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:28:14 UTC] PHP Stack trace:
+[05-Dec-2017 18:28:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:30:20 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:30:20 UTC] PHP Stack trace:
+[05-Dec-2017 18:30:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:32:19 UTC] PHP Parse error:  syntax error, unexpected 'star_rating_init' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/CS372Project/views/search.php on line 65
+[05-Dec-2017 18:32:19 UTC] PHP Stack trace:
+[05-Dec-2017 18:32:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
+[05-Dec-2017 18:32:19 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/CS372Project/html/control.php:49
+[05-Dec-2017 18:32:44 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:32:44 UTC] PHP Stack trace:
+[05-Dec-2017 18:32:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:36:21 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:36:21 UTC] PHP Stack trace:
+[05-Dec-2017 18:36:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:36:23 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:36:23 UTC] PHP Stack trace:
+[05-Dec-2017 18:36:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:36:28 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:36:28 UTC] PHP Stack trace:
+[05-Dec-2017 18:36:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:36:28 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:36:28 UTC] PHP Stack trace:
+[05-Dec-2017 18:36:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:41:49 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:41:49 UTC] PHP Stack trace:
+[05-Dec-2017 18:41:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:41:49 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:41:49 UTC] PHP Stack trace:
+[05-Dec-2017 18:41:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:41:55 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:41:55 UTC] PHP Stack trace:
+[05-Dec-2017 18:41:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:41:55 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:41:55 UTC] PHP Stack trace:
+[05-Dec-2017 18:41:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:51:01 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:51:01 UTC] PHP Stack trace:
+[05-Dec-2017 18:51:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:54:43 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:54:43 UTC] PHP Stack trace:
+[05-Dec-2017 18:54:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 18:54:59 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 5
+[05-Dec-2017 18:54:59 UTC] PHP Stack trace:
+[05-Dec-2017 18:54:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 19:00:51 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 9
+[05-Dec-2017 19:00:51 UTC] PHP Stack trace:
+[05-Dec-2017 19:00:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[05-Dec-2017 19:00:51 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 9
+[05-Dec-2017 19:00:51 UTC] PHP Stack trace:
+[05-Dec-2017 19:00:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0

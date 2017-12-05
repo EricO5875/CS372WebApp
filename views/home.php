@@ -8,7 +8,7 @@ A homepage for entertainmentcenter.com
       <!-- Heading Row -->
       <div class="row my-4">
         <div class="col-lg-8">
-          <iframe width="730" height="400" src="https://www.youtube.com/embed/-Denciie5oA?autoplay=1" frameborder="0" allowfullscreen></iframe>
+          <iframe width="730" height="400" src="https://www.youtube.com/embed/-Denciie5oA?autoplay=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-4">

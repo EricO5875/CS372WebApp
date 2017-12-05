@@ -49,6 +49,11 @@ A controller for entertainmentcenter.com
     		render('search', array('search' => $_GET['search']));
     		break;
     		
+    	case 'view':
+    		render('templates/header', array('title' => $_GET['title']));
+    		render('view', array('id' => $_GET['id'], 'media' => $_GET['media']));
+    		break;
+    		
     }
     
     	render('templates/footer');

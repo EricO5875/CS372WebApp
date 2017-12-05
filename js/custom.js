@@ -18,9 +18,13 @@
         
     });
             	
-    $(".rateYo").rateYo({
-        halfStar: true,
-        starWidth:"16px"
+    $(".rateYo").rateYo(
+    {
+        starWidth:"16px",
+        onSet: function (rating, rateYoInstance) 
+        {
+            $.get("../php/update_rating.php?rate=" + rating + "&id=" + $(this).attr('data-id'), function(response){});
+        }
     });
-                  
+    
 });

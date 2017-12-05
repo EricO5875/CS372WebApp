@@ -6,13 +6,12 @@
 */
 
     //Connect to database
-    require_once('../php/db_con.php');
     $connection = connect_to_db();
     
     $resultsPerPage = 10;
     $q = htmlspecialchars($search);
     
-    $query = "SELECT Title, Author, ImageURL, AverageRating, RatingsCount
+    $query = "SELECT Id, Title, Author, ImageURL, AverageRating, RatingsCount
               FROM BOOKS_T
               WHERE Title LIKE '%%$q%%'
               OR Author LIKE '%%$q%%';";
@@ -25,7 +24,7 @@
     {
         $resultsPerPage = $numberOfResults;
     }
-?>   
+?>  
     <!-- Page Content -->
     <div class="container content">
       <!-- Heading Row -->
@@ -39,33 +38,44 @@
             </ul>
         </div>
         <!-- /.col-lg-8 -->
-        <div class="col-lg-10">
+        <div class="col-lg-10" style='background-color:#ccc;'>
             <?php 
                 echo "Showing " . $resultsPerPage . " of "
                     . $numberOfResults . " results (0.<span id='time'></span> seconds)"; 
                 
-                 echo "<table>";
+                 echo "<table class='table-striped'>";
                  
                     for($i = 0; $i < $resultsPerPage; $i++) 
                     {
                         if($result = $results->fetch_assoc())
                         {
-                            echo "<tr><td>";
-                            echo "<img class='rounded pull-left' src='" . $result['ImageURL']. "' alt='" . $result['Title'] . "'/>";
-                            echo "</td><td style = 'width:300px'><strong>" . $result['Title'] . "</strong></span>";
+                            $imageURL = $result['ImageURL'];
+                            $id = $result['Id'];
+                            
+                            echo "<tr><td><a href = 'control.php?page=view&media=book&id=" . rawurlencode($id) . "&title=" . rawurlencode($result['Title']) ."'>";
+                            echo "<img id='" . $id . "' class='rounded pull-left' src='" . $result['ImageURL']. "' alt='" . $result['Title'] . "'/></a>";
+                            echo "</td><td style = 'width:300px'><a href = '#'><strong>" . $result['Title'] . "</strong></a>";
                             echo "</br>by " . $result['Author'];
-                            echo "</br><div class='rateYo' data-rateyo-read-only='true' data-rateYo-rating='";
-                            echo $result['AverageRating'] . "' ></div>" . $result['RatingsCount'] . " ratings";
+                            star_rating_init($id,$result['AverageRating'],true);
+                            echo $result['RatingsCount'] . " ratings";
                             echo "</td><td>";
                             echo "<div class='pt-2 form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>Readlist</label></div>";
                             echo "<div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>Reading</label></div>";
                             echo "<div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>Read</label></div>";
-                            echo "</br><div class='d-flex justify-content-center'>my rating</div><div class='d-flex justify-content-center'><div class='rateYo'></div></div></td></tr>";
+                            echo "</br><div class='d-flex justify-content-center'>my rating</div><div class='d-flex justify-content-center'>";
+                            star_rating_init($id);
+                            echo "</div></td></tr>";
+                        
+                            if($imageURL == null)
+                            {   
+                                //$id = validateid($result['id']);
+                                echo "<script> function handleResponse(response) { var item = response.items[0]; var link = item.volumeInfo.imageLinks.thumbnail;" 
+                                   . "document.getElementById('" . $id . "').setAttribute('src', link); } </script>"
+                                   . "<script src='https://www.googleapis.com/books/v1/volumes?q=id=" . $id . "&callback=handleResponse'></script>";
+                            }
                         }
                     }
-                   
                 echo "</table>";
-                
                 ?>
         </div> 
         <!-- /.col-md-4 -->
