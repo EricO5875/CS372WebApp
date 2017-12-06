@@ -4,6 +4,29 @@
 
     // $connection = connect_to_db();
 
+    function searchBooks($connection, $searchValue) {
+
+        $query = "SELECT Id, Title, Author, ImageURL, AverageRating, RatingsCount
+                    FROM BOOKS_T
+                    WHERE Title LIKE '%%$searchValue%%'
+                    OR Author LIKE '%%$searchValue%%';";
+
+        $results = $connection->query($query) or die(mysqli_error($connection));
+
+        return $results;
+    }
+
+    function searchMovies($connection, $searchValue) {
+
+        $query = "SELECT Title, ReleaseDate, ImageURL, AverageRating, Tagline
+                    FROM MOVIES_T
+                    WHERE Title LIKE '%%$searchValue%%';";
+
+        $results = $connection->query($query) or die(mysqli_error($connection));
+
+        return $results;
+    }
+
     function getRecentBooks($connection)
     {
         $query = "SELECT Id, Title, Author, PublicationYear, ImageURL
