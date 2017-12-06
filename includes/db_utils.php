@@ -90,7 +90,7 @@
     function getUserRelationMovie($connection, $title, $releaseDate, $userId) {
         $query = "SELECT Rating, Status
                   FROM MOVIES_TO_USER_T
-                  WHERE Title = '$title' AND ReleaseDate = '$releaseDate' AND UserID = '$userId' ";";
+                  WHERE Title = '$title' AND ReleaseDate = '$releaseDate' AND UserID = '$userId' ;";
 
         $results = $connection->query($query) or die(mysqli_error($connection));
 
