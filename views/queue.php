@@ -47,8 +47,10 @@ An queue page for entertainmentcenter.com
 
 
                                     echo "<tr>";
-                                    echo "<td><img class='rounded' src='" . $result['ImageURL'] . "' alt='" . $result['Title'] . "'/></td>";
+                                    echo "<td> <a href=control.php?page=view&media=movie&title=" . $result['Title'] . "&release=" . rawurlencode($result['ReleaseDate']) .">";
+                                    echo "<img class='rounded' src='" . $result['ImageURL'] . "' alt='" . $result['Title'] . "'/></td>";
                                     echo "<td>" . $result['Title'] . "</td>";
+                                    echo "</a>";
                                     echo "<td>" . $status . "</td>";
                                     echo "<td style='width:300px'><div class='rateYo'></div></td>";
                                     echo "<td>" . $result['AverageRating'] . "</td>";
@@ -152,7 +154,8 @@ An queue page for entertainmentcenter.com
                                     }
 
                                     echo "<tr>";
-                                    echo "<td><img class='rounded' src='" . $result['ImageURL'] . "' alt='" . $result['Title'] . "'/></td>";
+                                    echo "<td> <a href='control.php?page=view&media=book&id=" . rawurlencode($result['Id']) . "&title=" . rawurlencode($result['Title']) ."'>";
+                                    echo "<img class='rounded' src='" . $result['ImageURL'] . "' alt='" . $result['Title'] . "'/></td>";
                                     echo "<td>" . $result['Title'] . "</td>";
                                     echo "<td>" . $result['Author'] . "</td>";
                                     echo "<td>" . $status . "</td>";
