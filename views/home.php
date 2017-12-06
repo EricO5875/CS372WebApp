@@ -3,6 +3,14 @@
 A homepage for entertainmentcenter.com
 
 -->
+<?php
+    //Connect to DB
+    $connection = connect_to_db();
+
+    $bookResults = getRecentBooks($connection);
+    $movieResults = getRecentMovies($connection);
+
+?>
     <!-- Page Content -->
     <div class="container content">
       <!-- Heading Row -->
@@ -25,50 +33,30 @@ A homepage for entertainmentcenter.com
             <div class="card-body">
               <h2 class="card-title">Movies</h2>
               <h6 class="card-title">Box Office</h6>
-              <div class="thumbnail">
-                <a href="#">
-                  <img src="../images/boo2.jpg" alt="Tyler Perry's Boo2!" class="thumb">
-                  <div class="caption">
-                    <p>Tyler Perry's Boo2! A Medea Halloween</p>
-                    <p class="weekend-gross">$21.7M</p>
-                  </div>
-                </a>
-              </div>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="../images/geostorm.jpg" alt="Geostorm" class="thumb">
-                    <div class="caption">
-                      <p>Geostorm</p>
-                      <p class="weekend-gross">$13.3M</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="../images/HappyDeathDay.jpg" alt="Happy Death Day" class="thumb">
-                    <div class="caption">
-                      <p>Happy Death Day</p>
-                      <p class="weekend-gross">$9.4M</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="../images/BladeRunner2049.jpg" alt="Blade Runner 2049" class="thumb">
-                    <div class="caption">
-                      <p>Blade Runner 2049</p>
-                      <p class="weekend-gross">$7.2M</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+
+              <?php
+                  for($i = 0; $i < 4; $i++)
+                  {
+                      $movieResult = $movieResults->fetch_assoc();
+                      echo "<div class='thumbnail'>";
+                      echo "<img src='" . $movieResult['ImagePath'] . "' alt='" . $movieResult['Title'] . "' class='thumb'>";
+                      echo "<div class='caption'>";
+                      echo "<p>" . $movieResult['Title'] . "</p>";
+                      echo "<p class='weekend-gross'>" . $movieResult['AverageRating'];
+                      echo "</div>";
+                      echo "</a>";
+                      echo "</div>";
+                  }
+                ?>
+
             <div class="card-footer">
               <a href="#" class="btn btn-primary">More Info</a>
             </div>
           </div>
         </div>
+      </div>
         <!-- /.col-md-4 -->
-        
+
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
@@ -117,48 +105,63 @@ A homepage for entertainmentcenter.com
           </div>
         </div>
         <!-- /.col-md-4 -->
-        
+
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
               <h2 class="card-title">Books</h2>
               <h6 class="card-title">Recently Published</h6>
-              <div class="thumbnail">
-                <a href="#">
-                  <img src="../images/origin.jpg" alt="Origin" class="thumb">
-                  <div class="caption">
-                    <p>Origin</p>
-                    <p class="author">Dan Brown</p>
-                  </div>
-                </a>
-              </div>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="../images/TurtlesAlltheWayDown.jpg" alt="Turtles All the Way Down" class="thumb">
-                    <div class="caption">
-                      <p>Turtles All the Way Down</p>
-                      <p class="author">John Green</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="../images/WithoutMerit.jpg" alt="Without Merit" class="thumb">
-                    <div class="caption">
-                      <p>Without Merit</p>
-                      <p class="author">Collen Hoover</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="../images/TheShipoftheDead.jpg" alt="The Ship of the Dead" class="thumb">
-                    <div class="caption">
-                      <p>The Ship of the Dead</p>
-                      <p class="author">Rick Riordan</p>
-                    </div>
-                  </a>
-                </div>
+              <?php
+                  for($i = 0; $i < 4; $i++)
+                  {
+                      $bookResult = $bookResults->fetch_assoc();
+                      echo "<div class='thumbnail'>";
+                      echo "<a href='control.php?page=view&media=book&id=" . rawurlencode($bookResult['Id']) . "&title=" . rawurlencode($bookResult['Title']) ."'>";
+                      echo "<img src='" . $bookResult['ImageURL'] . "' alt='" . $bookResult['Title'] . "' class='thumb'>";
+                      echo "<div class='caption'>";
+                      echo "<p>" . $bookResult['Title'] . "</p>";
+                      echo "<p class='author'>" . $bookResult['AverageRating'] . "</p>";
+                      echo "</div>";
+                      echo "</a>";
+                      echo "</div>";
+                  }
+              ?>
+              <!--<div class="thumbnail">-->
+              <!--  <a href="#">-->
+              <!--    <img src="../images/origin.jpg" alt="Origin" class="thumb">-->
+              <!--    <div class="caption">-->
+              <!--      <p>Origin</p>-->
+              <!--      <p class="author">Dan Brown</p>-->
+              <!--    </div>-->
+              <!--  </a>-->
+              <!--</div>-->
+              <!--  <div class="thumbnail">-->
+              <!--    <a href="#">-->
+              <!--      <img src="../images/TurtlesAlltheWayDown.jpg" alt="Turtles All the Way Down" class="thumb">-->
+              <!--      <div class="caption">-->
+              <!--        <p>Turtles All the Way Down</p>-->
+              <!--        <p class="author">John Green</p>-->
+              <!--      </div>-->
+              <!--    </a>-->
+              <!--  </div>-->
+              <!--  <div class="thumbnail">-->
+              <!--    <a href="#">-->
+              <!--      <img src="../images/WithoutMerit.jpg" alt="Without Merit" class="thumb">-->
+              <!--      <div class="caption">-->
+              <!--        <p>Without Merit</p>-->
+              <!--        <p class="author">Collen Hoover</p>-->
+              <!--      </div>-->
+              <!--    </a>-->
+              <!--  </div>-->
+              <!--  <div class="thumbnail">-->
+              <!--    <a href="#">-->
+              <!--      <img src="../images/TheShipoftheDead.jpg" alt="The Ship of the Dead" class="thumb">-->
+              <!--      <div class="caption">-->
+              <!--        <p>The Ship of the Dead</p>-->
+              <!--        <p class="author">Rick Riordan</p>-->
+              <!--      </div>-->
+              <!--    </a>-->
+              <!--  </div>-->
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-primary">More Info</a>
