@@ -21,10 +21,11 @@ A sign up page for entertainmentcenter.com
 		                       $connection->real_escape_string($_POST["pass"]));
 		            
 		        $result = $connection->query($sql) or die(mysqli_error($connection));
-		        
-		        $_SESSION['authenticated'] = true;
-		        $_SESSION['user'] = $_POST['user'];
-			    header("Location: control.php?page=home");
+		       
+                $result = $results->fetch_assoc();
+                $_SESSION['authenticated'] = true;
+                $_SESSION['user'] = $result['UserId'];
+                header("Location: control.php?page=home");
 	        }
 	        else
 	        {

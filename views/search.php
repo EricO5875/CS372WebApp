@@ -46,29 +46,42 @@
                         if($result = $results->fetch_assoc())
                         {
                             $imageURL = $result['ImageURL'];
+                            if($imageURL == null)
+                            {
+                                $imageURL = 'https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png';
+                            }
+                            
                             $id = $result['Id'];
                             
                             echo "<tr><td><a href='control.php?page=view&media=book&id=" . rawurlencode($id) . "&title=" . rawurlencode($result['Title']) ."'>";
                             echo "<img id='" . $id . "' class='rounded pull-left' src='" . $result['ImageURL']. "' alt='" . $result['Title'] . "'/></a>";
                             echo "</td><td style = 'width:300px'><a href='control.php?page=view&media=book&id=" . rawurlencode($id) . "&title=" . rawurlencode($result['Title']) ."'>";
                             echo "<strong>" . $result['Title'] . "</strong></a></br>by " . $result['Author'];
-                            star_rating_init($id,$result['AverageRating'],true);
+                            star_rating_init($id,'-1',$result['AverageRating'],true);
                             echo $result['RatingsCount'] . " ratings";
+                            
                             ?>
                             </td><td>
-                            <form>
-                                <div class="form-group">
-                                    <div class='pt-2 form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>finished</label></div>
-                                    <div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>in progress</label></div>
-                                    <div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>interested</label></div>
-                                    <div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>not intersted</label></div>
-                                </div>
-                                <div class='d-flex justify-content-center'>my rating</div><div class='d-flex justify-content-center'>
-                            </form>    
-                        
-                            <?php 
-                            star_rating_init($id);
-                            echo "</div></td></tr>";
+                                <form style="<?php if(!isset($_SESSION['authenticated'])) echo "visibility:hidden" ?>" name="statusForm" action="" method="post">
+                                    <div class="form-group">
+                                        <div class='pt-2 form-check form-check-inline'><label class='form-check-label'>
+                                            <input class='form-check-input' data-user="<?php echo $_SESSION['user']; ?>" data-id="<?php echo $id; ?>" type='radio' value='0' name='status'>finished</label></div>
+                                        <div class='form-check form-check-inline'><label class='form-check-label'>
+                                            <input class='form-check-input' data-user="<?php echo $_SESSION['user']; ?>" data-id="<?php echo $id; ?>" type='radio' value='1' name='status'>in progress</label></div>
+                                        <div class='form-check form-check-inline'><label class='form-check-label'>
+                                            <input class='form-check-input' data-user="<?php echo $_SESSION['user']; ?>" data-id="<?php echo $id; ?>" type='radio' value='2' name='status'>interested</label></div>
+                                        <div class='form-check form-check-inline'><label class='form-check-label'>
+                                            <input class='form-check-input' data-user="<?php echo $_SESSION['user']; ?>" data-id="<?php echo $id; ?>" type='radio' value='3' name='status'>not intersted</label></div>
+                                    </div>
+                                    <div class="">
+                                        <div class='d-inline-block'>my rating</div><div class='d-inline-block'>
+                                             <?php 
+                                                star_rating_init($id,$_SESSION['user']);
+                                             ?>
+                                        </div>
+                                    </div>
+                                    
+                                <?php echo "</form></td></tr>";
                         
                             if($imageURL == null)
                             { ?> 

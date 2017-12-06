@@ -153,3 +153,8 @@
 [06-Dec-2017 03:32:30 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/CS372Project/html/control.php:57
 [06-Dec-2017 03:32:30 UTC] PHP   3. require() /home/ubuntu/workspace/CS372Project/includes/helpers.php:16
 [06-Dec-2017 03:32:30 UTC] PHP   4. header(*uninitialized*) /home/ubuntu/workspace/CS372Project/views/signup.php:28
+[06-Dec-2017 10:30:41 UTC] PHP Fatal error:  Call to undefined function getRecentBooks() in /home/ubuntu/workspace/Project/views/home.php on line 10
+[06-Dec-2017 10:30:41 UTC] PHP Stack trace:
+[06-Dec-2017 10:30:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Project/html/control.php:0
+[06-Dec-2017 10:30:41 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/Project/html/control.php:32
+[06-Dec-2017 10:30:41 UTC] PHP   3. require() /home/ubuntu/workspace/Project/includes/helpers.php:16

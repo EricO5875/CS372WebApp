@@ -23,10 +23,12 @@ A login page for entertainmentcenter.com
                       
             $results = $connection->query($query) or die("SQL Error line  ".__LINE__ ." file ".__FILE__." : ".mysqli_error());
             
-            if($result !== false && mysqli_num_rows($results) > 0)
+            
+            if($results !== false && mysqli_num_rows($results) > 0)
             {
+                $result = $results->fetch_assoc();
                 $_SESSION['authenticated'] = true;
-                $_SESSION['user'] = $user;
+                $_SESSION['user'] = $result['UserId'];
                 header("Location: control.php?page=home");
             }
             else
@@ -38,7 +40,6 @@ A login page for entertainmentcenter.com
 
 ?>
 
-        
         <form action="control.php?page=login" id="login" method="post">
             <fieldset>
                 <legend>Entertainment Center Login </legend>

@@ -23,8 +23,15 @@
         starWidth:"16px",
         onSet: function (rating, rateYoInstance) 
         {
-            $.get("../php/update_rating.php?rate=" + rating + "&id=" + $(this).attr('data-id'), function(response){});
+            console.log(rating);
+            $.get("../php/update_rating.php?rate=" + rating + "&id=" + $(this).attr('data-id') + "&user=" + $(this).attr('data-user'), function(response){});
         }
+    });
+    
+    $("input[name='status']").click(function()
+    {
+        console.log($(this).val());
+        $.get("../php/update_status.php?id=" + $(this).attr('data-id') + "&user=" + $(this).attr('data-user') + "&status=" + $(this).val(), function(response){});
     });
     
 });

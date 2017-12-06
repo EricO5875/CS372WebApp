@@ -14,7 +14,7 @@ A controller for entertainmentcenter.com
                 $_SESSION = array();
                 session_destroy();   
     	    }
-
+    require_once('../includes/db_utils.php');
     require_once('../includes/star_rating.php');
     require_once('../includes/db_con.php');
     require_once('../includes/helpers.php'); 
