@@ -18,9 +18,9 @@
 
     function getRecentMovies($connection)
     {
-        $query = "SELECT Title, YearOfRelease, ImagePath, AverageRating
+        $query = "SELECT Title, ReleaseDate, ImageURL, AverageRating
                     FROM MOVIES_T
-                    ORDER BY YearOfRelease DESC
+                    ORDER BY ReleaseDate DESC
                     LIMIT 0 , 30;";
 
         $results = $connection->query($query) or die(mysqli_error($connection));

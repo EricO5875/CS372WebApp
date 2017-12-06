@@ -39,7 +39,8 @@ A homepage for entertainmentcenter.com
                   {
                       $movieResult = $movieResults->fetch_assoc();
                       echo "<div class='thumbnail'>";
-                      echo "<img src='" . $movieResult['ImagePath'] . "' alt='" . $movieResult['Title'] . "' class='thumb'>";
+                      echo "<a href='control.php?page=view&media=movie&year=" . rawurlencode($movieResult['ReleaseDate']) . "&title=" . rawurlencode($movieResult['Title']) ."'>";
+                      echo "<img src='" . $movieResult['ImageURL'] . "' alt='" . $movieResult['Title'] . "' class='thumb'>";
                       echo "<div class='caption'>";
                       echo "<p>" . $movieResult['Title'] . "</p>";
                       echo "<p class='weekend-gross'>" . $movieResult['AverageRating'];
@@ -126,42 +127,6 @@ A homepage for entertainmentcenter.com
                       echo "</div>";
                   }
               ?>
-              <!--<div class="thumbnail">-->
-              <!--  <a href="#">-->
-              <!--    <img src="../images/origin.jpg" alt="Origin" class="thumb">-->
-              <!--    <div class="caption">-->
-              <!--      <p>Origin</p>-->
-              <!--      <p class="author">Dan Brown</p>-->
-              <!--    </div>-->
-              <!--  </a>-->
-              <!--</div>-->
-              <!--  <div class="thumbnail">-->
-              <!--    <a href="#">-->
-              <!--      <img src="../images/TurtlesAlltheWayDown.jpg" alt="Turtles All the Way Down" class="thumb">-->
-              <!--      <div class="caption">-->
-              <!--        <p>Turtles All the Way Down</p>-->
-              <!--        <p class="author">John Green</p>-->
-              <!--      </div>-->
-              <!--    </a>-->
-              <!--  </div>-->
-              <!--  <div class="thumbnail">-->
-              <!--    <a href="#">-->
-              <!--      <img src="../images/WithoutMerit.jpg" alt="Without Merit" class="thumb">-->
-              <!--      <div class="caption">-->
-              <!--        <p>Without Merit</p>-->
-              <!--        <p class="author">Collen Hoover</p>-->
-              <!--      </div>-->
-              <!--    </a>-->
-              <!--  </div>-->
-              <!--  <div class="thumbnail">-->
-              <!--    <a href="#">-->
-              <!--      <img src="../images/TheShipoftheDead.jpg" alt="The Ship of the Dead" class="thumb">-->
-              <!--      <div class="caption">-->
-              <!--        <p>The Ship of the Dead</p>-->
-              <!--        <p class="author">Rick Riordan</p>-->
-              <!--      </div>-->
-              <!--    </a>-->
-              <!--  </div>-->
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-primary">More Info</a>
