@@ -4,8 +4,21 @@ A controller for entertainmentcenter.com
 
 -->
 
-<?php require_once('../includes/helpers.php'); 
+<?php 
+    // Start the session
+    session_start();
+    
+    if(isset($GET['logout']))
+    	    {
+    	        session_start();
+                $_SESSION = array();
+                session_destroy();   
+    	    }
 
+    require_once('../includes/star_rating.php');
+    require_once('../includes/db_con.php');
+    require_once('../includes/helpers.php'); 
+    
     // determine which page to render
     if (isset($_GET['page']))
     	$page = $_GET['page'];
@@ -55,8 +68,6 @@ A controller for entertainmentcenter.com
     		break;
     		
     }
-    
     	render('templates/footer');
-
 ?>
 

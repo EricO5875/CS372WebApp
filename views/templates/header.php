@@ -3,9 +3,6 @@
 	A header for pages
 */
 
-    require_once('../includes/star_rating.php');
-    require_once('../includes/db_con.php');
-
 ?>
 
 <!DOCTYPE html>

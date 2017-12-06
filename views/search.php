@@ -27,24 +27,20 @@
 ?>  
     <!-- Page Content -->
     <div class="container content">
-      <!-- Heading Row -->
-      <div class="row my-4">
-        <div class="col-lg-2">
-            <h4>Limit Search Results</h4>
-            <ul>
-                <li>Movies</li>
-                <li>Tv Shows</li>
-                <li>Books</li>
-            </ul>
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-10" style='background-color:#ccc;'>
-            <?php 
-                echo "Showing " . $resultsPerPage . " of "
-                    . $numberOfResults . " results (0.<span id='time'></span> seconds)"; 
-                
-                 echo "<table class='table-striped'>";
-                 
+        <ul class="tabs">
+        	<li class="tab-link current" data-tab="tab-1">Movies</li>
+        	<li class="tab-link" data-tab="tab-2">TV Shows</li>
+        	<li class="tab-link" data-tab="tab-3">Books</li>
+        </ul>  
+        
+        <div id="tab-1" class="row my-4 tab-content current">
+
+       
+            <div class="col-lg-12" style='background-color:#ccc;'>
+            
+                <p>Showing <?php echo $resultsPerPage; ?> of <?php echo $numberOfResults; ?> results (0.<span id='time'></span> seconds)</p>
+                <table class='table table-striped'>
+                <?php
                     for($i = 0; $i < $resultsPerPage; $i++) 
                     {
                         if($result = $results->fetch_assoc())
@@ -52,35 +48,47 @@
                             $imageURL = $result['ImageURL'];
                             $id = $result['Id'];
                             
-                            echo "<tr><td><a href = 'control.php?page=view&media=book&id=" . rawurlencode($id) . "&title=" . rawurlencode($result['Title']) ."'>";
+                            echo "<tr><td><a href='control.php?page=view&media=book&id=" . rawurlencode($id) . "&title=" . rawurlencode($result['Title']) ."'>";
                             echo "<img id='" . $id . "' class='rounded pull-left' src='" . $result['ImageURL']. "' alt='" . $result['Title'] . "'/></a>";
-                            echo "</td><td style = 'width:300px'><a href = '#'><strong>" . $result['Title'] . "</strong></a>";
-                            echo "</br>by " . $result['Author'];
+                            echo "</td><td style = 'width:300px'><a href='control.php?page=view&media=book&id=" . rawurlencode($id) . "&title=" . rawurlencode($result['Title']) ."'>";
+                            echo "<strong>" . $result['Title'] . "</strong></a></br>by " . $result['Author'];
                             star_rating_init($id,$result['AverageRating'],true);
                             echo $result['RatingsCount'] . " ratings";
-                            echo "</td><td>";
-                            echo "<div class='pt-2 form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>Readlist</label></div>";
-                            echo "<div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>Reading</label></div>";
-                            echo "<div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>Read</label></div>";
-                            echo "</br><div class='d-flex justify-content-center'>my rating</div><div class='d-flex justify-content-center'>";
+                            ?>
+                            </td><td>
+                            <form>
+                                <div class="form-group">
+                                    <div class='pt-2 form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>finished</label></div>
+                                    <div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>in progress</label></div>
+                                    <div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>interested</label></div>
+                                    <div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='status'>not intersted</label></div>
+                                </div>
+                                <div class='d-flex justify-content-center'>my rating</div><div class='d-flex justify-content-center'>
+                            </form>    
+                        
+                            <?php 
                             star_rating_init($id);
                             echo "</div></td></tr>";
                         
                             if($imageURL == null)
-                            {   
-                                //$id = validateid($result['id']);
-                                echo "<script> function handleResponse(response) { var item = response.items[0]; var link = item.volumeInfo.imageLinks.thumbnail;" 
-                                   . "document.getElementById('" . $id . "').setAttribute('src', link); } </script>"
-                                   . "<script src='https://www.googleapis.com/books/v1/volumes?q=id=" . $id . "&callback=handleResponse'></script>";
-                            }
+                            { ?> 
+                                <script>
+                                    function handleResponse(response) 
+                                    { 
+                                        var item = response.items[0]; 
+                                        var link = item.volumeInfo.imageLinks.thumbnail; 
+                                        document.getElementById('<?php echo $id; ?>').setAttribute('src', link); 
+                                    } 
+                                </script>
+                                <script src='https://www.googleapis.com/books/v1/volumes?q=isbn=<?php echo $id; ?>&callback=handleResponse'></script>";
+                            <?php }
                         }
-                    }
-                echo "</table>";
-                ?>
-        </div> 
-        <!-- /.col-md-4 -->
-      </div>
-      <!-- /.row -->
+                    } ?>
+                </table>
+            </div> 
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
     </div>
     <!-- /.container -->
     

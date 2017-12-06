@@ -18,9 +18,12 @@
                                  <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="control.php?page=queue">My Queue</a>
-                        </li>
+                        <?php 
+                            if($_SESSION['authenticated'])
+                            {
+                               echo "<li class='nav-item'><a class='nav-link' href='control.php?page=queue'>My Queue</a></li>";
+                            }
+                        ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Browse
@@ -44,12 +47,30 @@
                     </form>
               
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="control.php?page=login">Login<span class="glyphicon glyphicon-log-in"></span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="control.php?page=signup">Sign up<span class="glyphicon glyphicon-edit"></span></a>
-                        </li>
+                        <?php 
+                            if($_SESSION['authenticated'])
+                            { ?>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         <img src="../images/person.JPG" width="30" height="30" class="d-inline-block align-top" alt="My Profile"/>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="control.php?page=browse&media=movies">View Profile</a>
+                                        <a class="dropdown-item" href="control.php?page=browse&media=tv_shows">Account Settings</a>
+                                        <a class="dropdown-item" href="control.php?page=home&logout=1">Logout</a>
+                                    </div>   
+                                    </a>
+                                </li>
+                            <?php }
+                            else 
+                            { ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="control.php?page=login">Login<span class="glyphicon glyphicon-log-in"></span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="control.php?page=signup">Sign up<span class="glyphicon glyphicon-edit"></span></a>
+                                </li>
+                            <?php } ?>
                     </ul>
                 </div>
             </div>

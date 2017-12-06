@@ -126,3 +126,30 @@
 [05-Dec-2017 19:00:51 UTC] PHP Fatal error:  Call to undefined function connect_to_db() in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 9
 [05-Dec-2017 19:00:51 UTC] PHP Stack trace:
 [05-Dec-2017 19:00:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/php/update_rating.php:0
+[06-Dec-2017 01:31:45 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/CS372Project/views/login.php on line 27
+[06-Dec-2017 01:31:45 UTC] PHP Stack trace:
+[06-Dec-2017 01:31:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
+[06-Dec-2017 01:31:45 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/CS372Project/html/control.php:45
+[06-Dec-2017 01:31:45 UTC] PHP   3. require() /home/ubuntu/workspace/CS372Project/includes/helpers.php:16
+[06-Dec-2017 01:31:45 UTC] PHP   4. mysql_num_rows(*uninitialized*) /home/ubuntu/workspace/CS372Project/views/login.php:27
+[06-Dec-2017 01:44:05 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/CS372Project/views/login.php on line 27
+[06-Dec-2017 01:44:05 UTC] PHP Stack trace:
+[06-Dec-2017 01:44:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
+[06-Dec-2017 01:44:05 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/CS372Project/html/control.php:45
+[06-Dec-2017 01:44:05 UTC] PHP   3. require() /home/ubuntu/workspace/CS372Project/includes/helpers.php:16
+[06-Dec-2017 01:44:05 UTC] PHP   4. mysql_num_rows(*uninitialized*) /home/ubuntu/workspace/CS372Project/views/login.php:27
+[06-Dec-2017 01:49:27 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/CS372Project/views/login.php on line 27
+[06-Dec-2017 01:49:27 UTC] PHP Stack trace:
+[06-Dec-2017 01:49:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
+[06-Dec-2017 01:49:27 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/CS372Project/html/control.php:45
+[06-Dec-2017 01:49:27 UTC] PHP   3. require() /home/ubuntu/workspace/CS372Project/includes/helpers.php:16
+[06-Dec-2017 01:49:27 UTC] PHP   4. mysql_num_rows(*uninitialized*) /home/ubuntu/workspace/CS372Project/views/login.php:27
+[06-Dec-2017 02:27:19 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/CS372Project/html/control.php on line 25
+[06-Dec-2017 02:27:38 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/CS372Project/html/control.php on line 25
+[06-Dec-2017 03:15:21 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/ubuntu/workspace/CS372Project/php/update_rating.php on line 12
+[06-Dec-2017 03:32:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ubuntu/workspace/CS372Project/views/templates/navbar.php:64) in /home/ubuntu/workspace/CS372Project/views/signup.php on line 28
+[06-Dec-2017 03:32:30 UTC] PHP Stack trace:
+[06-Dec-2017 03:32:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/CS372Project/html/control.php:0
+[06-Dec-2017 03:32:30 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/CS372Project/html/control.php:57
+[06-Dec-2017 03:32:30 UTC] PHP   3. require() /home/ubuntu/workspace/CS372Project/includes/helpers.php:16
+[06-Dec-2017 03:32:30 UTC] PHP   4. header(*uninitialized*) /home/ubuntu/workspace/CS372Project/views/signup.php:28

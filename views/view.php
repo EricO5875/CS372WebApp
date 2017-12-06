@@ -7,26 +7,26 @@
 
     if($media === 'book')
     {
-    //Connect to database
-    $connection = connect_to_db();
+        //Connect to database
+        $connection = connect_to_db();
+        
+        $query = "SELECT *
+                  FROM BOOKS_T
+                  WHERE Id = '$id';";
+        
     
-    $query = "SELECT *
-              FROM BOOKS_T
-              WHERE Id = '$id';";
-    
-
-    $results = $connection->query($query) or die(mysqli_error($connection));
-    
-    $result = $results->fetch_assoc();
-  
-    $author = $result['Author'];
-    $imageURL = $result['ImageURL'];
-    $title = $result['Title'];
-    $averageRating= $result['AverageRating'];
-    $ratingsCount = $result['RatingsCount'];
+        $results = $connection->query($query) or die(mysqli_error($connection));
+        
+        $result = $results->fetch_assoc();
+      
+        $author = $result['Author'];
+        $imageURL = $result['ImageURL'];
+        $title = $result['Title'];
+        $averageRating= $result['AverageRating'];
+        $ratingsCount = $result['RatingsCount'];
     }
     
-?>    
+?>  
     <!-- Page Content -->
     <div class="container content">
       <!-- Heading Row -->
@@ -56,19 +56,21 @@
     <!-- /.container -->
     
     <?php 
-          if($imageURL == null)
-                            {   
-                                echo "<script> function handleResponseImage(response) { var item = response.items[0]; var link=item.volumeInfo.imageLinks.thumbnail;" 
-                                   . "document.getElementById('" . $id . "').setAttribute('src', link); } </script>"
-                                   . "<script src='https://www.googleapis.com/books/v1/volumes?q=id=" . $id . "&callback=handleResponseImage'></script>";
-                            }
-    
+        if($imageURL == null)
+        { ?>  
+            <script>
+                function handleResponseImage(response) 
+                {   var item = response.items[0]; 
+                    var link=item.volumeInfo.imageLinks.thumbnail; 
+                    document.getElementById('<?php echo $id; ?>').setAttribute('src', link); } 
+            </script>
+            <script src='https://www.googleapis.com/books/v1/volumes?q=isbn=<?php echo $id; ?>&callback=handleResponseImage'></script>";
+        <?php } 
     ?>
-    
     <script>
       function handleResponseDescription(response) {
         var item = response.items[0];
-        document.getElementById("description").innerHTML += "<br>" + item.volumeInfo.description;
+        document.getElementById("description").innerHTML += item.volumeInfo.description;
     }
     </script>
-    <script src="https://www.googleapis.com/books/v1/volumes?q=id=<?php echo $id?>&callback=handleResponseDescription"></script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=isbn=<?php echo $id?>&callback=handleResponseDescription"></script>

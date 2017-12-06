@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2017 at 05:59 PM
+-- Generation Time: Dec 06, 2017 at 01:10 AM
 -- Server version: 5.5.57-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.21
 
@@ -32,15 +32,15 @@ CREATE TABLE IF NOT EXISTS `BOOKS_TO_USER_T` (
   `Rating` decimal(3,2) DEFAULT NULL,
   `Status` int(11) DEFAULT NULL,
   KEY `Id` (`Id`),
-  KEY `UserId` (`UserId`),
-  CHECK ((Rating >= 0 AND Rating <= 5))
+  KEY `UserId` (`UserId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Constraints for dumped tables
 --
 
----- Constraints for table `BOOKS_TO_USER_T`
+--
+-- Constraints for table `BOOKS_TO_USER_T`
 --
 ALTER TABLE `BOOKS_TO_USER_T`
   ADD CONSTRAINT `BOOKS_TO_USER_T_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `BOOKS_T` (`Id`) ON DELETE CASCADE,
