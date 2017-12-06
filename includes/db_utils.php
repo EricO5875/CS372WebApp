@@ -77,20 +77,20 @@
 
     }
 
-    function getUserRelationBook($connection, $id) {
+    function getUserRelationBook($connection, $id, $userId) {
         $query = "SELECT Rating, Status
                     FROM BOOKS_TO_USER_T
-                    WHERE UserId = " . 10000 . " AND Id = " . $id . ";";
+                    WHERE UserId = '$userId' AND Id = " . $id . ";";
 
         $results = $connection->query($query) or die(mysqli_error($connection));
 
         return $results;
     }
 
-    function getUserRelationMovie($connection, $title, $releaseDate) {
+    function getUserRelationMovie($connection, $title, $releaseDate, $userId) {
         $query = "SELECT Rating, Status
                   FROM MOVIES_TO_USER_T
-                  WHERE Title = '$title' AND ReleaseDate = '$releaseDate' AND UserID = " . 10000 . ";";
+                  WHERE Title = '$title' AND ReleaseDate = '$releaseDate' AND UserID = '$userId' ";";
 
         $results = $connection->query($query) or die(mysqli_error($connection));
 
