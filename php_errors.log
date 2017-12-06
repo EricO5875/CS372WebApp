@@ -158,3 +158,6 @@
 [06-Dec-2017 10:30:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Project/html/control.php:0
 [06-Dec-2017 10:30:41 UTC] PHP   2. render($template = *uninitialized*, $data = *uninitialized*) /home/ubuntu/workspace/Project/html/control.php:32
 [06-Dec-2017 10:30:41 UTC] PHP   3. require() /home/ubuntu/workspace/Project/includes/helpers.php:16
+[06-Dec-2017 11:15:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/Project/includes/db_utils.php on line 100
+[06-Dec-2017 11:15:35 UTC] PHP Stack trace:
+[06-Dec-2017 11:15:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/Project/html/control.php:0
