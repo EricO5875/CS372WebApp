@@ -55,8 +55,8 @@
                                          <img src="../images/person.JPG" width="30" height="30" class="d-inline-block align-top" alt="My Profile"/>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="control.php?page=browse&media=movies">View Profile</a>
-                                        <a class="dropdown-item" href="control.php?page=browse&media=tv_shows">Account Settings</a>
+                                        <a class="dropdown-item" href="#">View Profile</a>
+                                        <a class="dropdown-item" href="#">Account Settings</a>
                                         <a class="dropdown-item" href="control.php?page=home&logout=1">Logout</a>
                                     </div>   
                                     </a>
