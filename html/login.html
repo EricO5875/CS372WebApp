@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+        <title>Sign up</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        
+       <style>
+        
+            form {
+                   margin-top:20px;
+            }
+       
+           body {
+               padding-left: 5%;
+           }
+           #txtUsername, #txtPassword {
+               width: 40%;
+               min-width: 300px;
+           }
+           input[type="submit"] {
+              width:10%;
+              min-width:80px;
+           }
+       </style>
+
+    </head>
+
+    <body>
+        
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">Entertainment Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="queue.html">My Queue</a>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Browse
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="browse.html#movietab">Movies</a>
+                          <a class="dropdown-item" href="browse.html#tvtab">TV Shows</a>
+                          <a class="dropdown-item" href="browse.html#booktab">Books</a>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutUs.html">About Us</a>
+                </li>
+              </ul>
+          
+          <form class="form-inline my-2 my-lg-0" method="post" action="../php/sample.php">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
+              <input class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick="Javascript:window.location.href = '../php/sample.php';" value="Search">
+          </form>
+          
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="login.html">Login<span class="glyphicon glyphicon-log-in"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">Sign up<span class="glyphicon glyphicon-edit"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        
+        <form action="./entertainment.html" id="login" method="post" onsubmit="return true">
+            <fieldset>
+                <legend>Media Tracker Login: </legend>
+                <div>
+                    <b>Username: </b> <input type="text" class="form-control" name="txtUsername" id="txtUsername" required>
+                    <b>Password: </b> <input type="password" class="form-control" name="txtPassword" id="txtPassword" required>
+                </div>
+            </fieldset>
+            <br/>
+            <input type="submit" id="login" class="btn btn-default" value="Login" onclick="window.location.hrf='.entertainment.html">
+        </form>
+        <br/>
+            <input type="submit" id="signup" class="btn btn-default" value="Sign Up" onclick="window.location.href='./signup.html'">
+    
+        <!-- Bootstrap core JavaScript -->
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    
+    </body>
+</html>
