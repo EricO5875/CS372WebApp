@@ -39,7 +39,7 @@ A homepage for entertainmentcenter.com
                   {
                       $movieResult = $movieResults->fetch_assoc();
                       echo "<div class='thumbnail'>";
-                      echo "<a href='control.php?page=view&media=movie&year=" . rawurlencode($movieResult['ReleaseDate']) . "&title=" . rawurlencode($movieResult['Title']) ."'>";
+                      echo "<a href='control.php?page=view&media=movie&release=" . rawurlencode($movieResult['ReleaseDate']) . "&title=" . rawurlencode($movieResult['Title']) ."'>";
                       echo "<img src='" . $movieResult['ImageURL'] . "' alt='" . $movieResult['Title'] . "' class='thumb'>";
                       echo "<div class='caption'>";
                       echo "<p>" . $movieResult['Title'] . "</p>";
