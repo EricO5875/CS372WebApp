@@ -51,12 +51,12 @@
 
     }
 
-    function getUserBookQueue($connection) {
+    function getUserBookQueue($connection, $userId) {
 
         $query = "SELECT b.Id, b.Title, b.Author, b.ImageURL, b.AverageRating, u.Rating, u.Status
                     FROM BOOKS_T b
                     INNER JOIN BOOKS_TO_USER_T u ON b.Id = u.Id
-                    WHERE u.UserId = " . 10000;
+                    WHERE u.UserId = '$userId'";
 
         $results = $connection->query($query) or die(mysqli_error($connection));
 
@@ -64,12 +64,12 @@
 
     }
 
-    function getUserMovieQueue($connection) {
+    function getUserMovieQueue($connection, $userId) {
 
         $query = "SELECT m.Title, m.ReleaseDate, m.ImageURL, m.AverageRating, u.Rating, u.Status
                     FROM MOVIES_T m
                     INNER JOIN MOVIES_TO_USER_T u ON m.Title = u.Title AND m.ReleaseDate = u.ReleaseDate
-                    WHERE u.UserId = " . 10000;
+                    WHERE u.UserId = '$userId'";
 
         $results = $connection->query($query) or die(mysqli_error($connection));
 

@@ -8,10 +8,9 @@ An queue page for entertainmentcenter.com
     //Connect to database
     $connection = connect_to_db();
 
-    $movieResults = getUserMovieQueue($connection);
+    $movieResults = getUserMovieQueue($connection, $_SESSION['user']);
 
-    $bookResults = getUserBookQueue($connection);
-
+    $bookResults = getUserBookQueue($connection, $_SESSION['user']);
 ?>
 
         <div class="container">
@@ -35,15 +34,18 @@ An queue page for entertainmentcenter.com
 
                         <?php
                             for($i = 0; $i < 5; $i++)
-                            {
+                            {   
                                 if ($result = $movieResults->fetch_assoc()) {
-                                    if ($result['Status'] = 0) {
-                                        $status = "Have Watched";
-                                    } else if ($result['Status'] = 1) {
-                                        $status = "Currently Watching";
+                                       if ($result['Status'] == 0) {
+                                        $status = "Finished";
+                                    } else if ($result['Status'] == 1) {
+                                        $status = "In Progress";
+                                    } else if ($result['Status'] == 2) {
+                                        $status = "Interested";
                                     } else {
-                                        $status = "Want to Watch";
+                                        $status = "Not Interested";
                                     }
+
 
 
                                     echo "<tr>";
@@ -145,12 +147,14 @@ An queue page for entertainmentcenter.com
                             {
                                 if ($result = $bookResults->fetch_assoc()) {
 
-                                    if ($result['Status'] = 0) {
-                                        $status = "Have Read";
-                                    } else if ($result['Status'] = 1) {
-                                        $status = "Currently Reading";
+                                    if ($result['Status'] == 0) {
+                                        $status = "Finished";
+                                    } else if ($result['Status'] == 1) {
+                                        $status = "In Progress";
+                                    } else if ($result['Status'] == 2) {
+                                        $status = "Interested";
                                     } else {
-                                        $status = "Want to Read";
+                                        $status = "Not Interested";
                                     }
 
                                     echo "<tr>";
